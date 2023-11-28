@@ -21,7 +21,6 @@ export function generateStaticParams() {
 export default function BlogPost({ params }: BlogPostParams) {
   const post = getPostBySlug(params.slug);
 
-  console.log(post, "this is from the blog page");
   if (!post) {
     notFound();
   }

@@ -17,8 +17,8 @@ export async function POST(
   const slug = params.slug;
   const formData = await request.formData();
   const username = formData.get("username") as string;
-  const content = formData.get("content") as string;
+  const comment = formData.get("comment") as string;
 
-  await saveComment(slug, username, content);
+  await saveComment(username, comment, slug);
   return NextResponse.json("Comment saved");
 }
