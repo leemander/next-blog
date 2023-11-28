@@ -3,7 +3,11 @@ export default async function Comments({ postSlug }: { postSlug: string }) {
     <section>
       <h3>Comments</h3>
       <h4>Leave a comment:</h4>
-      <form action={`/api/comments/${postSlug}`} method="POST">
+      <form
+        action={`/api/comments/${postSlug}`}
+        className={`grid`}
+        method="POST"
+      >
         <label htmlFor="username">
           Username:
           <input type="text" name="username" id="username" />
@@ -11,8 +15,8 @@ export default async function Comments({ postSlug }: { postSlug: string }) {
         <label htmlFor="comment">
           Comment:
           <textarea name="comment" id="comment" cols={30} rows={10} />
-          <button type="submit">Post</button>
         </label>
+        <button type="submit">Post</button>
       </form>
     </section>
   );
