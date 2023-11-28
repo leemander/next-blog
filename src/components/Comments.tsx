@@ -1,7 +1,7 @@
 import { getComments } from "@/lib/comments";
 
 export default async function Comments({ postSlug }: { postSlug: string }) {
-  const WEBSITE_URL = "http://localhost:3000";
+  const WEBSITE_URL = "https://next-blog-leem.vercel.app/";
 
   const comments = [];
 
