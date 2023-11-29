@@ -2,11 +2,10 @@ import { WEB_SITE } from "config";
 
 export default async function Comments({ postSlug }: { postSlug: string }) {
   const comments = [];
-  console.log(WEB_SITE);
 
   try {
     const commentsResult = await fetch(`${WEB_SITE}/api/comments/${postSlug}`, {
-      next: { revalidate: 5 },
+      next: { revalidate: 0 },
     });
     const response = await commentsResult.json();
     comments.push(...response.comments.rows);
@@ -25,38 +24,6 @@ export default async function Comments({ postSlug }: { postSlug: string }) {
           <hr className="my-4 border-neutral-400" />
         </div>
       ))}
-      <h3 className="text-2xl font-bold">Leave a comment:</h3>
-      <form
-        action={`/api/comments/${postSlug}`}
-        className={`grid gap-8`}
-        method="POST"
-      >
-        <label className="grid gap-2 font-semibold " htmlFor="username">
-          Username:
-          <input
-            className=" border-neutral-400 border-solid border-2 p-2 font-normal"
-            type="text"
-            name="username"
-            id="username"
-          />
-        </label>
-        <label className="grid gap-2 font-semibold" htmlFor="comment">
-          Comment:
-          <textarea
-            className=" border-neutral-400 border-solid border-2 mx-1 p-2 font-normal"
-            name="comment"
-            id="comment"
-            cols={30}
-            rows={10}
-          />
-        </label>
-        <button
-          className="block w-fit px-6 py-4 font-semibold bg-red-500 text-white rounded"
-          type="submit"
-        >
-          Post
-        </button>
-      </form>
     </section>
   );
 }

@@ -1,3 +1,4 @@
+import { CommentForm } from "@/components/CommentForm";
 import Comments from "@/components/Comments";
 import { getPosts, getPostBySlug } from "@/lib/posts";
 import { notFound } from "next/navigation";
@@ -34,6 +35,7 @@ export default function BlogPost({ params }: BlogPostParams) {
       ></div>
       {/* @ts-ignore */}
       <Comments postSlug={params.slug} />
+      <CommentForm postSlug={params.slug} />
     </div>
   );
 }
