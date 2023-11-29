@@ -8,7 +8,7 @@ export default function Page() {
       <ul className="grid gap-2">
         {posts.map((post) => {
           return (
-            <li key={post.slug}>
+            <li key={post.slug} className="text-red-500">
               <Link href={`/blog/${post.slug}`}>{post.title}</Link>
             </li>
           );
