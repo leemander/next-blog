@@ -2,6 +2,7 @@ import { WEB_SITE } from "config";
 
 export default async function Comments({ postSlug }: { postSlug: string }) {
   const comments = [];
+  console.log(WEB_SITE);
 
   try {
     const commentsResult = await fetch(`${WEB_SITE}/api/comments/${postSlug}`, {
