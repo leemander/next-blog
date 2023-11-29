@@ -27,7 +27,7 @@ export default function BlogPost({ params }: BlogPostParams) {
 
   return (
     <div>
-      <h1>{post.title}</h1>
+      <h2 className="font-bold text-2xl mb-4">{post.title}</h2>
       <div
         dangerouslySetInnerHTML={{ __html: post.body.html }}
         className="prose dark:prose-invert"

@@ -4,8 +4,8 @@ export default function Page() {
   const posts = getPosts();
   return (
     <main>
-      <h2>Posts:</h2>
-      <ul>
+      <h2 className="text-xl font-bold mb-4">Posts:</h2>
+      <ul className="grid gap-2">
         {posts.map((post) => {
           return (
             <li key={post.slug}>

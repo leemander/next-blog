@@ -11,7 +11,6 @@ export default async function Comments({ postSlug }: { postSlug: string }) {
       { next: { revalidate: 5 } }
     );
     const response = await commentsResult.json();
-    console.log(response);
     comments.push(...response.comments.rows);
   } catch (error) {
     console.log(error);
@@ -19,29 +18,46 @@ export default async function Comments({ postSlug }: { postSlug: string }) {
 
   return (
     <section className="grid gap-4">
-      <hr className="my-8" />
-      <h3>Comments</h3>
+      <hr className="my-8 border-neutral-400" />
+      <h3 className="text-2xl font-bold">Comments</h3>
       {comments.map((comment) => (
         <div key={comment.id}>
-          <h4>{comment.username} says...</h4>
+          <h4 className="text-lg font-bold">{comment.username} says...</h4>
           <p>{comment.content}</p>
+          <hr className="my-4 border-neutral-400" />
         </div>
       ))}
-      <h3>Leave a comment:</h3>
+      <h3 className="text-2xl font-bold">Leave a comment:</h3>
       <form
         action={`/api/comments/${postSlug}`}
-        className={`grid`}
+        className={`grid gap-8`}
         method="POST"
       >
-        <label htmlFor="username">
+        <label className="grid gap-2 font-semibold " htmlFor="username">
           Username:
-          <input type="text" name="username" id="username" />
+          <input
+            className=" border-neutral-400 border-solid border-2 p-2 font-normal"
+            type="text"
+            name="username"
+            id="username"
+          />
         </label>
-        <label htmlFor="comment">
+        <label className="grid gap-2 font-semibold" htmlFor="comment">
           Comment:
-          <textarea name="comment" id="comment" cols={30} rows={10} />
+          <textarea
+            className=" border-neutral-400 border-solid border-2 mx-1 p-2 font-normal"
+            name="comment"
+            id="comment"
+            cols={30}
+            rows={10}
+          />
         </label>
-        <button type="submit">Post</button>
+        <button
+          className="block w-fit px-6 py-4 font-semibold bg-red-500 text-white rounded"
+          type="submit"
+        >
+          Post
+        </button>
       </form>
     </section>
   );
