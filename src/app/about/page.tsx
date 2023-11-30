@@ -16,7 +16,7 @@ export default function Page() {
         skills while celebrated my love of liquid bread. I hope you like it!
         Feel free to check out{" "}
         <a href="https://github.com/leemander">my Github profile</a> to see more
-        of what I've been up to.
+        of what I&apos;ve been up to.
       </p>
     </main>
   );
