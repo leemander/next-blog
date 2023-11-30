@@ -2,6 +2,8 @@ import { CommentForm } from "@/components/CommentForm";
 import Comments from "@/components/Comments";
 import { getPosts, getPostBySlug } from "@/lib/posts";
 import { notFound } from "next/navigation";
+import { bitter } from "@/app/layout";
+import Image from "next/image";
 
 type BlogPostParams = {
   params: {
@@ -28,7 +30,12 @@ export default function BlogPost({ params }: BlogPostParams) {
 
   return (
     <div>
-      <h2 className="font-bold text-2xl mb-4">{post.title}</h2>
+      <h2 className={`${bitter.className} text-3xl font-bold mb-4`}>
+        {post.title}
+      </h2>
+      {post.img && (
+        <Image src={post.img} alt={post.title} width={400} height={400} />
+      )}
       <div
         dangerouslySetInnerHTML={{ __html: post.body.html }}
         className="prose dark:prose-invert"

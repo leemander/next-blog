@@ -15,7 +15,7 @@ export default function Header() {
           Pub Explorer
         </h1>
         <nav>
-          <ul className="flex gap-4 font-semibold ">
+          <ul className="flex gap-4 font-semibold text-xl">
             <li>
               <Link className="header__link" href="/">
                 Home
@@ -23,7 +23,7 @@ export default function Header() {
             </li>
             <li>
               <Link className="header__link" href="/blog">
-                Blog
+                Archive
               </Link>
             </li>
             <li>
