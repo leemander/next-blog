@@ -23,6 +23,13 @@ a:is(:hover, :focus-visible) {
   text-decoration: underline;
 }
 
+.post__img {
+  aspect-ratio: 1;
+  height: 400px;
+  object-fit: cover;
+  margin: 1em 0;
+}
+
 .fade-in {
   animation: fade-in 0.33s linear;
 }

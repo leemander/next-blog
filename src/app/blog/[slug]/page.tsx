@@ -34,7 +34,13 @@ export default function BlogPost({ params }: BlogPostParams) {
         {post.title}
       </h2>
       {post.img && (
-        <Image src={post.img} alt={post.title} width={400} height={400} />
+        <Image
+          className="post__img"
+          src={post.img}
+          alt={post.title}
+          width={400}
+          height={400}
+        />
       )}
       <div
         dangerouslySetInnerHTML={{ __html: post.body.html }}

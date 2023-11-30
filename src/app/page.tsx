@@ -16,7 +16,7 @@ export default function Home() {
         </Link>
         {post.img && (
           <Image
-            className="my-4 w-400 h-400 object-cover"
+            className="post__img"
             src={post.img}
             alt={post.title}
             width={400}
