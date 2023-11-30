@@ -2,7 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
-a {
-  font-weight: 600;
+:root {
+  --bg-color: #d8cbc7;
+  --text-color: #433a3f;
+  --accent-color: #ff4e00;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-size: 1.1rem;
+}
+
+a:not(.header__link) {
+  color: var(--accent-color);
+  font-weight: 500;
+}
+
+a:is(:hover, :focus-visible) {
   text-decoration: underline;
+}
+
+.fade-in {
+  animation: fade-in 0.33s linear;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

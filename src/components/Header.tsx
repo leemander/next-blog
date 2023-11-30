@@ -1,16 +1,35 @@
 import Link from "next/link";
+import { Fraunces } from "next/font/google";
+
+const fraunces = Fraunces({
+  subsets: ["latin"],
+});
+
 export default function Header() {
   return (
-    <header className="bg-red-500 py-8 text-white">
-      <div className="container mx-auto  px-4  flex items-center justify-between">
-        <h1 className="font-bold text-4xl">BLOG</h1>
+    <header className="bg-green-800 text-yellow-300">
+      <div
+        className={"container mx-auto flex justify-between py-8 items-center"}
+      >
+        <h1 className={`text-5xl font-bold ${fraunces.className}`}>
+          Pub Explorer
+        </h1>
         <nav>
-          <ul className="flex gap-8">
+          <ul className="flex gap-4 font-semibold ">
             <li>
-              <Link href="/">Home</Link>
+              <Link className="header__link" href="/">
+                Home
+              </Link>
             </li>
             <li>
-              <Link href="/blog">Blog</Link>
+              <Link className="header__link" href="/blog">
+                Blog
+              </Link>
+            </li>
+            <li>
+              <Link className="header__link" href="/about">
+                About
+              </Link>
             </li>
           </ul>
         </nav>
