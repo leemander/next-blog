@@ -23,11 +23,16 @@ a:is(:hover, :focus-visible) {
   text-decoration: underline;
 }
 
-.post__img {
+.square-img {
   aspect-ratio: 1;
-  height: 400px;
   object-fit: cover;
-  margin: 1em 0;
+  margin-block: 1em;
+}
+
+.rect-img {
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  margin-block: 1em;
 }
 
 .fade-in {

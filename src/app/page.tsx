@@ -16,7 +16,7 @@ export default function Home() {
         </Link>
         {post.img && (
           <Image
-            className="post__img"
+            className="square-img"
             src={post.img}
             alt={post.title}
             width={400}

@@ -35,16 +35,16 @@ export default function BlogPost({ params }: BlogPostParams) {
       </h2>
       {post.img && (
         <Image
-          className="post__img"
+          className="rect-img mx-auto"
           src={post.img}
           alt={post.title}
-          width={400}
+          width={712}
           height={400}
         />
       )}
       <div
         dangerouslySetInnerHTML={{ __html: post.body.html }}
-        className="prose dark:prose-invert"
+        className="prose dark:prose-invert grid gap-4"
       ></div>
       {/* @ts-ignore */}
       <Comments postSlug={params.slug} />
