@@ -2,9 +2,9 @@
 import { useRouter } from "next/navigation";
 import { useTransition } from "react";
 import { WEB_SITE } from "config";
-
+import { Bitter } from "next/font/google";
 /// ... imports here
-
+const bitter = Bitter({ subsets: ["latin"] });
 export function CommentForm({ postSlug }: { postSlug: string }) {
   // the router hook to trigger a page refresh
   const router = useRouter();
@@ -55,7 +55,9 @@ export function CommentForm({ postSlug }: { postSlug: string }) {
   // the handleFormSubmit fuction is passed to the onSubmit event handler on the form
   return (
     <>
-      <h3 className="text-2xl font-bold">Leave a comment:</h3>
+      <h3 className={"text-2xl font-bold mb-4 " + bitter.className}>
+        Leave a comment
+      </h3>
       <form className={`grid gap-8`} onSubmit={handleFormSubmit}>
         <label className="grid gap-2 font-semibold " htmlFor="username">
           Username:
@@ -78,7 +80,7 @@ export function CommentForm({ postSlug }: { postSlug: string }) {
         </label>
 
         <button
-          className="block w-fit px-6 py-4 font-semibold bg-red-500 text-white rounded"
+          className="block w-fit px-6 py-4 mx-1 font-semibold bg-green-900 text-white rounded"
           type="submit"
           disabled={isPending}
         >
