@@ -10,7 +10,7 @@ export default function Page() {
   );
 
   return (
-    <main>
+    <main className="fade-in">
       <h2 className={`${bitter.className} text-3xl font-bold mb-4`}>
         All Posts
       </h2>

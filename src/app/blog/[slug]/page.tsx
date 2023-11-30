@@ -29,7 +29,7 @@ export default function BlogPost({ params }: BlogPostParams) {
   }
 
   return (
-    <div>
+    <main className="fade-in">
       <h2 className={`${bitter.className} text-3xl font-bold mb-4`}>
         {post.title}
       </h2>
@@ -49,6 +49,6 @@ export default function BlogPost({ params }: BlogPostParams) {
       {/* @ts-ignore */}
       <Comments postSlug={params.slug} />
       <CommentForm postSlug={params.slug} />
-    </div>
+    </main>
   );
 }

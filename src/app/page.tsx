@@ -37,7 +37,7 @@ export default function Home() {
   }
 
   return (
-    <main>
+    <main className="fade-in">
       <h2 className={`${bitter.className} text-3xl font-bold mb-8`}>
         Recent Posts
       </h2>

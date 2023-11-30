@@ -13,8 +13,8 @@ export default function Page() {
       />
       <p className="my-4 w-1/2 mx-auto">
         Hello! My name is Lee and I made this blog to practice my new Next.js
-        skills while celebrated my love of liquid bread. I hope you like it!
-        Feel free to check out{" "}
+        skills while celebrating my love of all things liquid bread. I hope you
+        like it! Feel free to check out{" "}
         <a href="https://github.com/leemander">my Github profile</a> to see more
         of what I&apos;ve been up to.
       </p>
