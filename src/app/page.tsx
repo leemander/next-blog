@@ -32,6 +32,7 @@ export default function Home() {
             ? post.body.raw
             : `${post.body.raw.slice(0, 400).trim()}...`}
         </p>
+        <hr className="my-8 border-black" />
       </li>
     ));
   }
